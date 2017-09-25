@@ -140,7 +140,7 @@ if(!(file.exists(&quot;activity.csv&quot;))) {
 # Read the data
 data &lt;- read.csv(&quot;activity.csv&quot;, header=TRUE, sep=&quot;,&quot;, na.strings=&quot;NA&quot;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Process/transform the data (if necessary) into a format suitable for your analysis</li>
+<li>Process/transform the data (if necessary) into a format suitable for the analysis</li>
 </ol>
 <pre class="r"><code>library(lubridate)
 data &lt;- transform(data, date = ymd(date))</code></pre>
@@ -166,9 +166,10 @@ data.aggdate &lt;- na.omit(data.aggdate)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Calculate and report the mean and median of the total number of steps taken per day</li>
 </ol>
-<pre class="r"><code>summary(data.aggdate$steps)[3:4]</code></pre>
-<pre><code>##   Median     Mean 
-## 10765.00 10766.19</code></pre>
+<pre class="r"><code>summary(data.aggdate$steps)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##      41    8841   10765   10766   13294   21194</code></pre>
+<p>The mean is 10766 and the median is 10765.</p>
 </div>
 <div id="what-is-the-average-daily-activity-pattern" class="section level2">
 <h2>What is the average daily activity pattern?</h2>
